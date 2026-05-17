@@ -33,6 +33,27 @@ html, body, [class*="css"] {
     color: #e6edf3;
 }
 
+header[data-testid="stHeader"] {
+    background-color: #0d1117 !important;
+    border-bottom: 1px solid #21262d !important;
+}
+
+div[data-testid="stToolbar"] {
+    display: none !important;
+}
+
+div[data-testid="stDecoration"] {
+    display: none !important;
+}
+
+#MainMenu {
+    display: none !important;
+}
+
+footer {
+    display: none !important;
+}
+
 section[data-testid="stSidebar"] {
     background-color: #161b22;
     border-right: 1px solid #21262d;
@@ -617,21 +638,20 @@ fig_traj.update_layout(
     paper_bgcolor='#0d1117',
     font=dict(color='#7d8590', family='DM Sans'),
     xaxis=dict(
-        title='Tool Wear (min)', gridcolor='#21262d',
+        title=dict(text='Tool Wear (min)', font=dict(size=11, color='#7d8590')),
+        gridcolor='#21262d',
         tickfont=dict(family='DM Mono', size=10),
-        titlefont=dict(size=11, color='#7d8590')
     ),
     yaxis=dict(
-        title='RUL (min)', gridcolor='#21262d',
+        title=dict(text='RUL (min)', font=dict(size=11, color='#58a6ff')),
+        gridcolor='#21262d',
         tickfont=dict(family='DM Mono', size=10),
-        titlefont=dict(size=11, color='#58a6ff')
     ),
     yaxis2=dict(
-        title='Failure Probability (%)',
+        title=dict(text='Failure Probability (%)', font=dict(size=11, color='#f85149')),
         overlaying='y', side='right',
         range=[0, 105],
         tickfont=dict(family='DM Mono', size=10),
-        titlefont=dict(size=11, color='#f85149'),
         showgrid=False,
     ),
     legend=dict(
